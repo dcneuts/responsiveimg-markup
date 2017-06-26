@@ -26,9 +26,11 @@ for (let i = 0; i<IMAGES.length; i++) {
   imgSrc = imgSrc.slice(0, -8);
   //
   let srcset = makeSrcset(imgSrc);
-  console.log(srcset);
+  // Places values in srcset
+  IMAGES[i].setAttribute("srcset", srcset);
 
   let type = IMAGES[i].getAttribute("data-type");
   let sizes = SIZES[type];
-  console.log(sizes);
+  // Places correct values in srcset
+  IMAGES[i].setAttribute("sizes", sizes);
 }
